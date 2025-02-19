@@ -352,7 +352,7 @@ export default function Home() {
                 {...fadeInAnimation}
                 className="text-xl md:text-2xl text-primary/80 mb-8 font-light"
               >
-                Crafting innovative digital experiences through design and technology.
+                Fusionando diseño industrial y tecnología para crear productos que transforman espacios.
               </motion.p>
               <motion.div
                 {...fadeInAnimation}
@@ -473,7 +473,7 @@ export default function Home() {
                       transition={{ duration: 0.5, delay: 0.6 }}
                     >
                       <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/90 to-primary/80">
-                        {featuredProject.title}
+                        LightFold
                       </span>
                     </motion.h2>
 
@@ -484,7 +484,7 @@ export default function Home() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.7 }}
                     >
-                      {featuredProject.description}
+                      Una mesa de luz plegable que redefine la funcionalidad del espacio. Diseñada con precisión milimétrica, combina un acabado metálico pulido con mecanismos personalizados y tecnología integrada. Su sistema magnético permite un plegado suave sobre la pared, mientras que su hub de carga y lámpara incorporada la convierten en una pieza esencial del mobiliario moderno.
                     </motion.p>
 
                     {/* Features and Technologies Combined - Inspired by Naoto Fukasawa's grid */}
@@ -498,7 +498,16 @@ export default function Home() {
                       >
                         <h4 className="text-xs font-medium text-primary/40 uppercase tracking-[0.2em]">Key Features</h4>
                         <ul className="grid grid-cols-2 gap-y-4 gap-x-8">
-                          {featuredProject.features?.map((feature, index) => (
+                          {[
+                            "Mecanismo de plegado magnético",
+                            "Acabado metálico premium",
+                            "Hub USB-C integrado",
+                            "Iluminación LED ajustable",
+                            "Sistema de bloqueo seguro",
+                            "Diseño ultra-delgado",
+                            "Instalación sin herramientas",
+                            "Certificación IP54"
+                          ].map((feature, index) => (
                             <motion.li 
                               key={feature}
                               initial={{ opacity: 0, x: -20 }}
@@ -526,11 +535,18 @@ export default function Home() {
                         transition={{ duration: 0.5, delay: 1 }}
                       >
                         <div className="flex items-center gap-3">
-                          <h4 className="text-xs font-medium text-primary/60 uppercase tracking-[0.2em]">Stack</h4>
+                          <h4 className="text-xs font-medium text-primary/60 uppercase tracking-[0.2em] font-outfit">Stack</h4>
                         </div>
                         
-                        <div className="flex flex-wrap gap-2">
-                          {featuredProject.tags.map((tag, index) => (
+                        <div className="flex flex-wrap gap-1.5">
+                          {[
+                            "Aluminio 6061-T6",
+                            "Neodimio N52",
+                            "USB-C PD",
+                            "CRI 95+",
+                            "Bisagras Custom",
+                            "PCB Integrado"
+                          ].map((tag, index) => (
                             <motion.div
                               key={tag}
                               initial={{ opacity: 0, scale: 0.8 }}
@@ -542,10 +558,41 @@ export default function Home() {
                               }}
                               className="group"
                             >
-                              <div className="relative px-3 py-1.5 bg-primary/20 group-hover:bg-primary/30">
-                                <span className="relative z-10 text-sm font-medium text-background dark:text-background/90">
+                              <div className="relative px-3 py-1 rounded-full bg-gradient-to-b from-[#1a2942] to-[#0f1829] border border-[#2a4b8f]/20 group-hover:border-[#2a4b8f]/40 shadow-[inset_0px_0px_8px_rgba(42,75,143,0.15)] transition-all duration-300">
+                                {/* Metallic Highlight */}
+                                <div className="absolute inset-x-0 top-0 h-[40%] bg-gradient-to-b from-[#2a4b8f]/15 to-transparent rounded-t-full" />
+                                
+                                {/* Bottom Shadow */}
+                                <div className="absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-black/25 to-transparent rounded-b-full" />
+                                
+                                {/* Edge Highlights */}
+                                <div className="absolute inset-x-3 top-[1px] h-[1px] bg-gradient-to-r from-transparent via-[#4b7bda]/40 to-transparent" />
+                                <div className="absolute inset-x-3 bottom-[1px] h-[1px] bg-gradient-to-r from-transparent via-[#4b7bda]/20 to-transparent" />
+                                
+                                {/* Corner Accents */}
+                                <div className="absolute left-[1px] top-[1px] w-1.5 h-1.5">
+                                  <div className="absolute left-0 top-0 w-full h-[1px] bg-gradient-to-r from-[#4b7bda]/60 to-transparent rounded-full" />
+                                  <div className="absolute left-0 top-0 w-[1px] h-full bg-gradient-to-b from-[#4b7bda]/60 to-transparent rounded-full" />
+                                </div>
+                                
+                                <div className="absolute right-[1px] bottom-[1px] w-1.5 h-1.5">
+                                  <div className="absolute right-0 bottom-0 w-full h-[1px] bg-gradient-to-l from-[#4b7bda]/60 to-transparent rounded-full" />
+                                  <div className="absolute right-0 bottom-0 w-[1px] h-full bg-gradient-to-t from-[#4b7bda]/60 to-transparent rounded-full" />
+                                </div>
+
+                                {/* Tag Text */}
+                                <span className="relative z-10 text-xs font-medium text-[#7aa1ff] group-hover:text-[#96b5ff] transition-colors duration-300 font-outfit tracking-wider uppercase">
                                   {tag}
                                 </span>
+
+                                {/* Inner Shadow Overlay */}
+                                <div className="absolute inset-0 rounded-full bg-gradient-to-b from-black/5 to-white/5 opacity-50 group-hover:opacity-0 transition-opacity duration-300" />
+                                
+                                {/* Hover Glow Effect */}
+                                <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 bg-[#4b7bda]/5 blur-[1px]" />
+                                
+                                {/* Metallic Shine Effect */}
+                                <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-r from-transparent via-[#4b7bda]/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%]" />
                               </div>
                             </motion.div>
                           ))}

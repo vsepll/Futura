@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Space_Grotesk } from 'next/font/google';
+import { Space_Grotesk, Outfit } from 'next/font/google';
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { ThemeInfo } from "@/components/ThemeInfo";
 import Header from "@/components/Header";
@@ -23,6 +23,8 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 });
 
+const outfit = Outfit({ subsets: ['latin'] });
+
 export const metadata: Metadata = {
   title: "Portfolio - Dynamic Themes",
   description: "A portfolio showcasing projects with dynamic themes based on time and weather",
@@ -34,8 +36,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased`}>
-      <body className={`${geistSans.className} ${geistMono.className} ${spaceGrotesk.className}`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} ${outfit.className} antialiased`}>
+      <body className={`${geistSans.className} ${geistMono.className} ${spaceGrotesk.className} ${outfit.className}`}>
         <ThemeProvider>
           <Header />
           <main className="pt-16">
